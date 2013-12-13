@@ -1,0 +1,29 @@
+<h1>Listing mainpages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mainpages.each do |mainpage| %>
+      <tr>
+        <td><%= mainpage.name %></td>
+        <td><%= mainpage.content %></td>
+        <td><%= link_to 'Show', mainpage %></td>
+        <td><%= link_to 'Edit', edit_mainpage_path(mainpage) %></td>
+        <td><%= link_to 'Destroy', mainpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mainpage', new_mainpage_path %>
